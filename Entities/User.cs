@@ -1,10 +1,12 @@
-namespace HackathonApi.Entities;
+﻿namespace HackathonApi.Entities;
 
 public class User
 {
     public int Id { get; set; }
-    public DateTime Created { get; set; } = DateTime.Now;
-    public string Email { get; set; }
-    public required int StaffStatus { get; set; }
-    public string? FirstName { get; set; }
+    public  required string LastName { get; set; }
+    public required string FirstName { get; set; }
+    public required string Email { get; set; }
+    public required string StudentNumber { get; set; }
+    public required List<StudentProgramme> StudentProgrammes { get; set; }
 }
+

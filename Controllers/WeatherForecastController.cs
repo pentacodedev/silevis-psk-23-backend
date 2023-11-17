@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace HackathonApi.Controllers;
-
+// ;-)
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase

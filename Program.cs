@@ -1,4 +1,6 @@
 
+using HackathonApi.Database;
+using HackathonApi.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace HackathonApi;
@@ -11,10 +13,14 @@ public class Program
 
         // Add services to the container.
 
+
+
+
+
         builder.Services.AddControllers();
 
+        builder.Services.AddScoped<UsosService>();
         builder.Services.AddDbContext<HackathonDbContext>(options => options.UseSqlite("Data Source=HackathonDatabase.db"));
-
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
@@ -28,7 +34,7 @@ public class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-
+       
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
