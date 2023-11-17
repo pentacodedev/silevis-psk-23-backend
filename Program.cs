@@ -13,7 +13,7 @@ public class Program
 
         // Add services to the container.
 
-
+        builder.Services.AddCors(options => options.AddPolicy("AllowPolicy", policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
 
 
@@ -34,6 +34,8 @@ public class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseCors("AllowPolicy");
        
         app.UseHttpsRedirection();
 
