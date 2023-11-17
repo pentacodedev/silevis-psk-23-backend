@@ -11,12 +11,12 @@ namespace HackathonApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class StudentsController : ControllerBase
+    public class UsosController : ControllerBase
     {
         private HackathonDbContext _context;
         private UsosService _usosService;
 
-        public StudentsController(HackathonDbContext context, UsosService usosService)
+        public UsosController(HackathonDbContext context, UsosService usosService)
         {
             _context = context;
             _usosService = usosService;
