@@ -13,23 +13,15 @@ public class HackathonDbContext : DbContext
 
     public HackathonDbContext(DbContextOptions options) : base(options)
     {
-
-        this.SaveChanges();
-        /*
-        if (!this.Companies.Any())
+        if (!this.Internships.Any())
         {
-            this.Companies.Add(new Company()
-            { Address = "Jaworznia", Email = "Jaworznia@jwn.pl", KrsNumber = "123321312", Name = "Jawokorp", NipNumber = "12312312", PhoneNumber = "1231231", RegonNumber = "123123213", RepresentativeFirstname = "Adam", RepresentativeSurname = "Salamanderski" });
+            this.Internships.Add(new Internship()
+            {  StudentEmail = "s022222@student.tu.kielce.pl", ManagerEmail = "p.fraczek@tu.kiece.pl", DateOfEnd = DateTime.Now.AddDays(5), DateOfStart = DateTime.Now.AddDays(4), CompanyAddress = "Kielce 20", CompanyEmail = "ork@jwn.pl", CompanyKrsNumber = "4542312312312", CompanyName = "Zaklad Bagienny SA", CompanyNipNumber = "124124124", CompanyPhoneNumber = "553252352", CompanyRegonNumber = "232332", CompanyRepresentativeFirstname = "Adam", CompanyRepresentativeSurname = "Salamanderski"});
             this.SaveChanges();
-            if (!this.Internships.Any())
-            {
-                this.Internships.Add(new Internship()
-                { Id = 133, StudentEmail = "s022222@student.tu.kielce.pl", ManagerEmail = "p.fraczek@tu.kiece.pl", DateOfEnd = DateTime.Now.AddDays(5), DateOfStart = DateTime.Now.AddDays(4), Company = Companies.FirstOrDefault(), RecrutationEnd = DateTime.Now.AddDays(3), RecrutationStart = DateTime.Now.AddDays(1) });
-                this.SaveChanges();
-            }
-        }*/
-
-
+        }
     }
+
+
+
 }
 
