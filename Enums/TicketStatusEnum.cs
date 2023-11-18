@@ -1,6 +1,6 @@
 ﻿namespace HackathonApi.Enums
 {
-    public enum NewDateTicketStatusEnum
+    public enum TicketStatusEnum
     {
         Unreviewed = 0,
         Accepted = 1,

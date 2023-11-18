@@ -14,7 +14,7 @@ namespace HackathonApi.DTOs
         public required string CompanyKrsNumber { get; set; }
         public required string CompanyEmail { get; set; }
         public required string CompanyPhoneNumber { get; set; }
-        public required string CompanyRegonNumber { get; set; }
+        public required string CompanyRegonNumber { get; set; } 
         public required string CompanyRepresentativeFirstname { get; set; }
         public required string CompanyRepresentativeSurname { get; set; }
         public string? StudentEmail { get; set; }

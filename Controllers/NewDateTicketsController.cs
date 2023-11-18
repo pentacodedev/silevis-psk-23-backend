@@ -11,19 +11,19 @@ namespace HackathonApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TicketController : ControllerBase
+    public class NewDateTicketsController : ControllerBase
     {
         private HackathonDbContext _context;
 
-        public TicketController(HackathonDbContext context)
+        public NewDateTicketsController(HackathonDbContext context)
         {
             _context = context;
         }
 
-        [HttpGet(Name = "{id}")]
-        public async Task<ActionResult<NewDateTicket>> GetTicketByEmail(int id)
+        [HttpGet(Name = "{email}")]
+        public async Task<ActionResult<NewDateTicket>> GetTicketByEmail(string email)
         {
-            var result = await _context.NewDateTickets.FirstOrDefaultAsync(x => x.Id == id);
+            var result = await _context.NewDateTickets.FirstOrDefaultAsync(x => x.StudentEmail == email);
             if (result == null)
             {
                 return NotFound();
