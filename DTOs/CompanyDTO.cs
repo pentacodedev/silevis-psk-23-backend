@@ -15,6 +15,7 @@ namespace HackathonApi.DTOs
         public required string RegonNumber { get; set; }
         public required string RepresentativeFirstname { get; set; }
         public required string RepresentativeSurname { get; set; }
+        public virtual IEnumerable<Internship> Internships { get; set; }
         public static CompanyDTO FromEntity(Company entity)
         {
             TinyMapper.Bind<Company, CompanyDTO>();

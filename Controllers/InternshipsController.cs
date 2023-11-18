@@ -23,7 +23,7 @@ namespace HackathonApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<InternshipDTO>> GetInternshipById(int id)
         {
-            var entity =  _context.Internships.Include(x => x.IntershipCreator).FirstOrDefault(x => x.Id == id);
+            var entity =  _context.Internships.FirstOrDefault(x => x.Id == id);
             if (entity == null) return NotFound();
             return InternshipDTO.FromEntity(entity);
         }
@@ -31,7 +31,7 @@ namespace HackathonApi.Controllers
         [HttpGet("managed-by/{email}")]
         public ActionResult<IEnumerable<InternshipDTO>> GetInternshipsForManager([FromRoute] string email)
         {
-            var entities =  _context.Internships.Where(x => x.ManagerEmail == email).Include(x=>x.IntershipCreator).ToList();
+            var entities =  _context.Internships.Where(x => x.ManagerEmail == email).ToList();
             return Ok(entities.Select(InternshipDTO.FromEntity));
         }
 
@@ -39,14 +39,14 @@ namespace HackathonApi.Controllers
         [HttpGet("for-student-history/{email}")]
         public ActionResult<IEnumerable<InternshipDTO>> GetInternshipsHistoryForStudent([FromRoute] string email)
         {
-            var entities = _context.Internships.Where(x => x.StudentEmail == email).Include(x => x.IntershipCreator).ToList();
+            var entities = _context.Internships.Where(x => x.StudentEmail == email).ToList();
             return Ok(entities.Select(InternshipDTO.FromEntity));
         }
 
         [HttpGet("for-student/{email}")]
         public ActionResult<InternshipDTO> GetInternshipForStudent([FromRoute] string email)
         {
-            var entity = _context.Internships.Where(x => x.StudentEmail == email).OrderBy(x => x.DateOfStart).Include(x => x.IntershipCreator).FirstOrDefault();
+            var entity = _context.Internships.Where(x => x.StudentEmail == email).OrderBy(x => x.DateOfStart).FirstOrDefault();
             if(entity == null) return NotFound();
             return Ok(InternshipDTO.FromEntity(entity));
         }
