@@ -13,12 +13,12 @@ public class HackathonDbContext : DbContext
 
     public HackathonDbContext(DbContextOptions options) : base(options)
     {
-        if (!this.Internships.Any())
-        {
-            this.Internships.Add(new Internship()
-            {  StudentEmail = "s022222@student.tu.kielce.pl", ManagerEmail = "p.fraczek@tu.kiece.pl", DateOfEnd = DateTime.Now.AddDays(5), DateOfStart = DateTime.Now.AddDays(4), CompanyAddress = "Kielce 20", CompanyEmail = "ork@jwn.pl", CompanyKrsNumber = "4542312312312", CompanyName = "Zaklad Bagienny SA", CompanyNipNumber = "124124124", CompanyPhoneNumber = "553252352", CompanyRegonNumber = "232332", CompanyRepresentativeFirstname = "Adam", CompanyRepresentativeSurname = "Salamanderski"});
-            this.SaveChanges();
-        }
+        //if(!this.Internships.Any())
+        //{
+        //    this.Internships.Add(new Internship()
+        //    {  Id=1, StudentEmail = "s022222@student.tu.kielce.pl", ManagerEmail = "p.fraczek@tu.kiece.pl", DateOfEnd = DateTime.Now.AddDays(5), DateOfStart = DateTime.Now.AddDays(4), CompanyAddress = "Kielce 20", CompanyEmail = "ork@jwn.pl", CompanyKrsNumber = "4542312312312", CompanyName = "Zaklad Bagienny SA", CompanyNipNumber = "124124124", CompanyPhoneNumber = "553252352", CompanyRegonNumber = "232332", CompanyRepresentativeFirstname = "Adam", CompanyRepresentativeSurname = "Salamanderski"});
+        //    this.SaveChanges();
+        //}
     }
 
 
