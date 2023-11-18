@@ -10,14 +10,14 @@ public class PDFservice
 	public PDFservice() { }
 
 
-	public void Form_1_Generate(Company company, User student, Internship internship, bool polish)
+	public byte[] Form_1_Generate(Company company, User student, Internship internship, bool polish)
 	{
 		string form = " ";
 
 		if (polish)
-			form = File.ReadAllText("C:\\Users\\mateu\\OneDrive\\Desktop\\Form_Pol_1.txt");
+			form = File.ReadAllText("Forms_templ\\Form_Pol_1.txt");
 		else
-			form = File.ReadAllText("C:\\Users\\mateu\\OneDrive\\Desktop\\Form_Eng_1.txt");
+			form = File.ReadAllText("Forms_templ\\Form_Eng_1.txt");
 
 		form = form.Replace("#1", DateTime.Now.ToString("dd.MM.yyyy"));
 		form = form.Replace("#2", company.Name);
@@ -32,7 +32,7 @@ public class PDFservice
 		form = form.Replace("#11", internship.DateOfStart.ToString("dd.mm"));
 		form = form.Replace("#12", internship.DateOfEnd.ToString("dd.mm"));
 
-		Document.Create(container =>
+		return Document.Create(container =>
 		{
 			container.Page(page =>
 			{
@@ -105,7 +105,7 @@ public class PDFservice
 				});
 			});
 		})
-		 .GeneratePdfAndShow();
+		 .GeneratePdf();
 	}
 
 

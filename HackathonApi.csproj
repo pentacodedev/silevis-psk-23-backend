@@ -7,11 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="PDF_files\Zarz_R_54_19_zal_1.pdf" />
+    <Compile Remove="PDF_files\**" />
+    <Content Remove="PDF_files\**" />
+    <EmbeddedResource Remove="PDF_files\**" />
+    <None Remove="PDF_files\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="PDF_files\Zarz_R_54_19_zal_1.pdf">
+    <None Remove="Forms_templ\Form_Eng_1.txt" />
+    <None Remove="Forms_templ\Form_Pol_1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Forms_templ\Form_Eng_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_templ\Form_Pol_1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

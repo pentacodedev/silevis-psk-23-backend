@@ -18,7 +18,7 @@ public class HackathonDbContext : DbContext
             { Address = "Jaworznia", Email = "Jaworznia@jwn.pl", KrsNumber = "123321312", Name = "Jawokorp", Id = 10, NipNumber = "12312312", PhoneNumber = "1231231", RegonNumber = "123123213", RepresentativeFirstname = "Adam", RepresentativeSurname = "Salamanderski" });
             this.SaveChanges();
             this.Internships.Add(new Internship()
-            { Id = 10, StudentEmail = "s022222@student.tu.kielce.pl", ManagerEmail = "a.kowalski@tu.kiece.p", DateOfEnd = DateTime.Now.AddDays(5), DateOfStart = DateTime.Now.AddDays(4), IntershipCreator = Companies.FirstOrDefault(x => x.Id == 10), RecrutationEnd = DateTime.Now.AddDays(3), RecrutationStart = DateTime.Now.AddDays(1) });
+            { Id = 10, StudentEmail = "s022222@student.tu.kielce.pl", ManagerEmail = "p.fraczek@tu.kiece.pl", DateOfEnd = DateTime.Now.AddDays(5), DateOfStart = DateTime.Now.AddDays(4), IntershipCreator = Companies.FirstOrDefault(x => x.Id == 10), RecrutationEnd = DateTime.Now.AddDays(3), RecrutationStart = DateTime.Now.AddDays(1) });
             this.SaveChanges();
         }
     }
