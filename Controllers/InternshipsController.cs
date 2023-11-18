@@ -36,11 +36,19 @@ namespace HackathonApi.Controllers
         }
 
 
-        [HttpGet("for-student/{email}")]
-        public ActionResult<IEnumerable<InternshipDTO>> GetInternshipsForStudent([FromRoute] string email)
+        [HttpGet("for-student-history/{email}")]
+        public ActionResult<IEnumerable<InternshipDTO>> GetInternshipsHistoryForStudent([FromRoute] string email)
         {
-            var entities =  _context.Internships.Where(x => x.StudentEmail == email).ToList();
+            var entities = _context.Internships.Where(x => x.StudentEmail == email).ToList();
             return Ok(entities.Select(InternshipDTO.FromEntity));
+        }
+
+        [HttpGet("for-student/{email}")]
+        public ActionResult<InternshipDTO> GetInternshipForStudent([FromRoute] string email)
+        {
+            var entity = _context.Internships.Where(x => x.StudentEmail == email).OrderBy(x => x.DateOfStart).FirstOrDefault();
+            if(entity == null) return NotFound();
+            return Ok(InternshipDTO.FromEntity(entity));
         }
 
         [HttpPost]
