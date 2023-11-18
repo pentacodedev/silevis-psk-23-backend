@@ -1,0 +1,28 @@
+<div><p>Załącznik nr 1 do Zarządzenia Nr 54/19<br>
+                                          Rektora Politechniki Świętokrzyskiej z dnia 20 września 2019 r.</p></div>
+                                          <aside><p>#8 #9 #10<br>
+                                                 <small>Imię i nazwisko studenta, nr albumu<small><br>
+                                                 Kierunek i forma studiów<br>
+                                                 Kierunek i forma studiów<br>
+                                                 Rok studiów<br>
+                                                 Rok studiów</p>
+                                           </aside>
+                                           <div>Pan/Pani<br> Pordziekan ds.Studenckich Wydziału<br> Elektrotechniki,Automatyki i Informatyki<br>dr inż. Barbara Łukawska</div>
+                                          <container><h5>Podanie o zaliczenie praktyki studenckiej</h5></container>
+                                          <p>       Zwracam się z uprzejmą prośbą o zaliczenie mi praktyki na studiach stacjonarnych/niestacjonarnych<br>
+                                          na kierunku kierunek w roku akademckim 2023/24<br>
+                                          na podstawie (wpisać jedną z sytuacji określoną w § 6 ust. 10 Regulaminu praktyk zawodowych) <br> 
+                                               coś_do_wpisiania<br>
+                                          Jako potwierdzenie załączam (załącznik A) stosowne zaświadczenie.</p>
+                                          <div><p>...................................</p><p>Podpis studenta</p></div>
+                                           <p>Opinie:<br>
+                                           1. <b>Opiekun praktyki na kierunku</b>..........................................................................................<br>
+                                           Wyrażam zgodę/nie wyrażam zgody<sup>1</sup> na zaliczenie praktyki i przedstawiam sprawę do dalszego rozpatrzenia<br><br>
+                                            data,podpis....................................<br>
+                                           2. <b>Wydziału kierownik praktyk</b>..........................................................................................<br>
+                                           Wyrażam zgodę/nie wyrażam zgody<sup>1</sup> na zaliczenie praktyki i przedstawiam sprawę do dalszego rozpatrzenia</p><br><br>
+                                            data,podpis....................................<br>
+                                          3. <b>Prodziekan ds. Studenckich Wydziału</b>.......................................................................<br>
+                                           Wyrażam zgodę/nie wyrażam zgody<sup>1</sup> na zaliczenie praktyki i przedstawiam sprawę do dalszego rozpatrzenia</p><br><br>
+                                            data,podpis....................................<br><br>
+                                             <sup>1</sup>niepotrzebne skreślić
