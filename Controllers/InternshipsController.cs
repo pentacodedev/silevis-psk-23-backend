@@ -3,6 +3,7 @@ using HackathonApi.DTOs;
 using HackathonApi.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
+using Nelibur.ObjectMapper;
 using System.Data.Entity;
 
 namespace HackathonApi.Controllers
@@ -22,7 +23,7 @@ namespace HackathonApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<InternshipDTO>> GetInternshipById(int id)
         {
-            var entity = await _context.Internships.FirstOrDefaultAsync(x => x.Id == id);
+            var entity =  _context.Internships.FirstOrDefault(x => x.Id == id);
             if (entity == null) return NotFound();
             return InternshipDTO.FromEntity(entity);
         }
@@ -30,16 +31,16 @@ namespace HackathonApi.Controllers
         [HttpGet("managed-by/{email}")]
         public async Task<ActionResult<IEnumerable<InternshipDTO>>> GetInternshipsForManager([FromRoute] string email)
         {
-            var entities = _context.Internships.Where(x => x.ManagerEmail== email).Select(x => InternshipDTO.FromEntity(x));
-            return await entities.ToListAsync();
+            var entities = await _context.Internships.Where(x => x.ManagerEmail == email).ToListAsync();
+            return Ok(entities.Select(InternshipDTO.FromEntity));
         }
 
 
         [HttpGet("for-student/{email}")]
         public async Task<ActionResult<IEnumerable<InternshipDTO>>> GetInternshipsForStudent([FromRoute] string email)
         {
-            var entities = _context.Internships.Where(x => x.StudentEmail == email).Select(x => InternshipDTO.FromEntity(x));
-            return await entities.ToListAsync();
+            var entities = await _context.Internships.Where(x => x.StudentEmail == email).ToListAsync();
+            return Ok(entities.Select(InternshipDTO.FromEntity));
         }
 
         [HttpPost]
@@ -55,9 +56,19 @@ namespace HackathonApi.Controllers
         [HttpPost("accept-internship/{id}")]
         public async Task<ActionResult> AcceptInternship(int id)
         {
-            var result = await _context.Internships.FirstOrDefaultAsync(x => x.Id == id);
+            var result =  _context.Internships.FirstOrDefault(x => x.Id == id);
             if (result == null) return BadRequest();
             result.IsSigned = true;
+            await _context.SaveChangesAsync();
+            return Ok(result);
+        }
+
+        [HttpPost("reject-internship/{id}")]
+        public async Task<ActionResult> RejectInternship(int id)
+        {
+            var result = await _context.Internships.FirstOrDefaultAsync(x => x.Id == id);
+            if (result == null) return BadRequest();
+            result.IsSigned = false;
             await _context.SaveChangesAsync();
             return Ok(result);
         }
