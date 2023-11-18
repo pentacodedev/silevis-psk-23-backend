@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -15,11 +15,16 @@
 
   <ItemGroup>
     <None Remove="Forms_templ\Form_Eng_1.txt" />
+    <None Remove="Forms_templ\Form_Eng_2.txt" />
     <None Remove="Forms_templ\Form_Pol_1.txt" />
+    <None Remove="Forms_templ\Form_Pol_2.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Forms_templ\Form_Eng_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_templ\Form_Eng_2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_templ\Form_Pol_1.txt">
@@ -39,6 +44,16 @@
     <PackageReference Include="QuestPDF" Version="2023.10.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="TinyMapper" Version="3.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Forms_temp\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Forms_templ\Form_Pol_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

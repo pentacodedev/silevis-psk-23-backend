@@ -1,0 +1,28 @@
+<div><p>Annex No. 1 to Order No. 54/19<br>
+                                         Rector of the Kielce University of Technology of September 20, 2019</p></div>
+                                          <aside><p>#8 #9 #10<br>
+                                                 <small>Student's name and surname, album number<small><br>
+                                                 Kierunek i forma studiów<br>
+                                                 Field and form of studies<br>
+                                                 Rok studiów<br>
+                                                 Year of study</p>
+                                           </aside>
+                                           <div>Pan/Pani<br> Deputy Dean for Student Affairs of the Faculty<br> Electrical Engineering, Automation and Computer Science<br>dr inż. Barbara Łukawska</div>
+                                          <container><h5>Application for credit for student internship</h5></container>
+                                          <p>       Zwracam się z uprzejmą prośbą o zaliczenie mi praktyki na studiach stacjonarnych/niestacjonarnych<br>
+                                          na kierunku kierunek w roku akademckim 2023/24<br>
+                                          na podstawie (wpisać jedną z sytuacji określoną w § 6 ust. 10 Regulaminu praktyk zawodowych) <br> 
+                                               coś_do_wpisiania<br>
+                                          Jako potwierdzenie załączam (załącznik A) stosowne zaświadczenie.</p>
+                                          <div><p>...................................</p><p>Podpis studenta</p></div>
+                                           <p>Opinie:<br>
+                                           1. <b>Opiekun praktyki na kierunku</b>..........................................................................................<br>
+                                           Wyrażam zgodę/nie wyrażam zgody<sup>1</sup> na zaliczenie praktyki i przedstawiam sprawę do dalszego rozpatrzenia<br><br>
+                                            data,podpis....................................<br>
+                                           2. <b>Wydziału kierownik praktyk</b>..........................................................................................<br>
+                                           Wyrażam zgodę/nie wyrażam zgody<sup>1</sup> na zaliczenie praktyki i przedstawiam sprawę do dalszego rozpatrzenia</p><br><br>
+                                            data,podpis....................................<br>
+                                          3. <b>Prodziekan ds. Studenckich Wydziału</b>.......................................................................<br>
+                                           Wyrażam zgodę/nie wyrażam zgody<sup>1</sup> na zaliczenie praktyki i przedstawiam sprawę do dalszego rozpatrzenia</p><br><br>
+                                            data,podpis....................................<br><br>
+                                             <sup>1</sup>niepotrzebne skreślić

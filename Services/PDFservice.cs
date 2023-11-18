@@ -3,6 +3,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using HackathonApi.Entities;
+using SkiaSharp;
 
 
 namespace HackathonApi;
@@ -34,9 +35,9 @@ public class PDFservice
 		string form = " ";
 
 		if (polish)
-			form = File.ReadAllText("");
-		else
-			form = File.ReadAllText("");
+			form = File.ReadAllText("Forms_templ\\Form_Pol_1.txt");
+        else
+			form = File.ReadAllText("Forms_templ\\Form_Eng_1.txt");
 
 		form = Replace(form, company, student, internship);
 
@@ -121,9 +122,9 @@ public class PDFservice
 		string form = " ";
 
 		if (polish)
-			form = File.ReadAllText("");
+			form = File.ReadAllText("Forms_templ\\Form_Pol_2.txt");
 		else
-			form = File.ReadAllText("");
+			form = File.ReadAllText("Forms_templ\\Form_Eng_2.txt");
 
 		form = Replace(form, company, student, internship);
 
