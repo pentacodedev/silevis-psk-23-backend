@@ -20,8 +20,8 @@ namespace HackathonApi.Controllers
             _context = context;
         }
 
-        [HttpGet(Name = "{email}")]
-        public async Task<ActionResult<NewDateTicket>> GetTicketByEmail(string email)
+        [HttpGet("{email}")]
+        public async Task<ActionResult<NewDateTicket>> GetTicketByEmail([FromRoute] string email)
         {
             var result = await _context.NewDateTickets.FirstOrDefaultAsync(x => x.StudentEmail == email);
             if (result == null)
