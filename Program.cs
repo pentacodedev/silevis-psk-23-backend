@@ -2,6 +2,7 @@
 using HackathonApi.Database;
 using HackathonApi.Services;
 using Microsoft.EntityFrameworkCore;
+using QuestPDF.Infrastructure;
 
 namespace HackathonApi;
 
@@ -19,6 +20,8 @@ public class Program
 
         builder.Services.AddControllers();
 
+        QuestPDF.Settings.License = LicenseType.Community;
+        builder.Services.AddScoped<PDFservice>();
         builder.Services.AddScoped<UsosService>();
         builder.Services.AddDbContext<HackathonDbContext>(options => options.UseSqlite("Data Source=HackathonDatabase.db"));
 

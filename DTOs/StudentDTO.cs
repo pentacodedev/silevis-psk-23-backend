@@ -15,9 +15,9 @@ public class StudentDTO
     {
     }
 
-    public static StudentDTO FromEntity(User student)
+    public static StudentDTO FromEntity(UserDTO student)
     {
-        TinyMapper.Bind<User, StudentDTO>();
+        TinyMapper.Bind<UserDTO, StudentDTO>();
         return TinyMapper.Map<StudentDTO>(student);
     }
 }

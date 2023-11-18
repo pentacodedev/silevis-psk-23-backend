@@ -6,7 +6,6 @@ namespace HackathonApi.DTOs
     public class InternshipDTO
     {
         public int Id { get; set; }
-        public required CompanyDTO Company { get; set; }
         public required DateTime DateOfStart { get; set; }
         public required DateTime DateOfEnd { get; set; }
         public required string CompanyName { get; set; }

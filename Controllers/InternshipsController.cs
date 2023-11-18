@@ -60,6 +60,26 @@ namespace HackathonApi.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
+        [HttpPut]
+        public ActionResult PutInternship([FromBody] NullableInternshipDTO dto)
+        {
+
+            var entity = _context.Internships.FirstOrDefault(x => x.Id == dto.Id);
+            if(!ModelState.IsValid) return BadRequest();
+            
+            if (entity == null) return BadRequest();
+            entity.CompanyNipNumber = dto.CompanyNipNumber ?? entity.CompanyNipNumber;
+            entity.CompanyPhoneNumber = dto.CompanyPhoneNumber ?? entity.CompanyPhoneNumber;
+            entity.CompanyKrsNumber = dto.CompanyKrsNumber ?? entity.CompanyKrsNumber;
+            entity.CompanyRegonNumber = dto.CompanyRegonNumber ?? entity.CompanyRegonNumber;
+            entity.CompanyAddress = dto.CompanyAddress ?? entity.CompanyAddress;
+            entity.CompanyName = dto.CompanyName ?? entity.CompanyName;
+            entity.CompanyEmail = dto.CompanyEmail ?? entity.CompanyEmail;
+            entity.CompanyRepresentativeFirstname = dto.CompanyRepresentativeFirstname ?? entity.CompanyRepresentativeFirstname;
+            entity.CompanyRepresentativeSurname = dto.CompanyRepresentativeSurname ?? entity.CompanyRepresentativeSurname;
+            _context.SaveChanges();
+            return Ok();
+        }
 
         [HttpPost("accept-internship/{id}")]
         public async Task<ActionResult> AcceptInternship(int id)

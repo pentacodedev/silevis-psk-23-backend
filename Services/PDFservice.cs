@@ -4,6 +4,7 @@ using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using HackathonApi.Entities;
 using SkiaSharp;
+using HackathonApi.DTOs;
 
 
 namespace HackathonApi;
@@ -12,15 +13,15 @@ public class PDFservice
 
 	public PDFservice() { }
 
-	public string Replace(string form, Company company, User student, Internship internship)
+	public string Replace(string form, User student, InternshipDTO internship)
 	{
 		form = form.Replace("#1", DateTime.Now.ToString("dd.MM.yyyy"));
-		form = form.Replace("#2", company.Name);
-		form = form.Replace("#3", company.Address);
-		form = form.Replace("#4", company.KrsNumber);
-		form = form.Replace("#5", company.NipNumber);
-		form = form.Replace("#6", company.RegonNumber);
-		form = form.Replace("#7", company.RepresentativeFirstname + " " + company.RepresentativeSurname);
+		form = form.Replace("#2", internship.CompanyName);
+		form = form.Replace("#3", internship.CompanyAddress);
+		form = form.Replace("#4", internship.CompanyKrsNumber);
+		form = form.Replace("#5", internship.CompanyNipNumber);
+		form = form.Replace("#6", internship.CompanyRegonNumber);
+		form = form.Replace("#7", internship.CompanyRepresentativeFirstname + " " + internship.CompanyRepresentativeSurname);
 		form = form.Replace("#8", student.FirstName);
 		form = form.Replace("#9", student.LastName);
 		form = form.Replace("#10", student.StudentNumber.ToString());
@@ -30,7 +31,7 @@ public class PDFservice
 		return form;
 	}
 
-	public void Form_1_Generate(Company company, User student, Internship internship, bool polish)
+	public byte[] Form_1_Generate(User student, InternshipDTO internship, bool polish)
 	{
 		string form = " ";
 
@@ -39,9 +40,9 @@ public class PDFservice
         else
 			form = File.ReadAllText("Forms_templ\\Form_Eng_1.txt");
 
-		form = Replace(form, company, student, internship);
+		form = Replace(form, student, internship);
 
-		Document.Create(container =>
+		return Document.Create(container =>
 		{
 			container.Page(page =>
 			{
@@ -93,9 +94,9 @@ public class PDFservice
 
 
 						handler.SetHtml(@"<p><b>§ 5. 1</b>Strony wyznaczają osoby właściwe do kontaktu w bieżących sprawach:</p>
-                                        <p><b>1)</b> z ramienia Zakładu Pracy <h7>" + company.RepresentativeFirstname + " " + company.RepresentativeSurname + "</h7><br>" +
-										"tel.: <h7>" + company.PhoneNumber + "</h7><br>" +
-										"e-mail: <h7>" + company.Email + "</h7><br>" +
+                                        <p><b>1)</b> z ramienia Zakładu Pracy <h7>" + internship.CompanyRepresentativeFirstname + " " + internship.CompanyRepresentativeSurname + "</h7><br>" +
+										"tel.: <h7>" + internship.CompanyPhoneNumber + "</h7><br>" +
+										"e-mail: <h7>" + internship.CompanyEmail + "</h7><br>" +
 										"<b>2)</b> z ramienia Uczelni <h7>Patryk Frączek</h7><br>" +
 										"tel.: <h7>123 123 123</h7><br>" +
 										"e-mail: <h7>p.fraczek@tu.kiece.pl</h7></p>" +
@@ -114,10 +115,10 @@ public class PDFservice
 				});
 			});
 		})
-		 .GeneratePdfAndShow();
+		 .GeneratePdf();
 	}
 
-	public void Form_2_Generate(Company company, User student, Internship internship, bool polish)
+	public byte[] Form_2_Generate(User student, InternshipDTO internship, bool polish)
 	{
 		string form = " ";
 
@@ -126,9 +127,9 @@ public class PDFservice
 		else
 			form = File.ReadAllText("Forms_templ\\Form_Eng_2.txt");
 
-		form = Replace(form, company, student, internship);
+		form = Replace(form, student, internship);
 
-		Document.Create(container =>
+		return Document.Create(container =>
 		{
 			container.Page(page =>
 			{
@@ -200,7 +201,7 @@ public class PDFservice
 
 
 		})
-		 .GeneratePdfAndShow();
+		 .GeneratePdf();
 	}
 }
 
