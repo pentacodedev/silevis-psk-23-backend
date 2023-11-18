@@ -29,17 +29,17 @@ namespace HackathonApi.Controllers
         }
 
         [HttpGet("managed-by/{email}")]
-        public async Task<ActionResult<IEnumerable<InternshipDTO>>> GetInternshipsForManager([FromRoute] string email)
+        public ActionResult<IEnumerable<InternshipDTO>> GetInternshipsForManager([FromRoute] string email)
         {
-            var entities = await _context.Internships.Where(x => x.ManagerEmail == email).ToListAsync();
+            var entities =  _context.Internships.Where(x => x.ManagerEmail == email).ToList();
             return Ok(entities.Select(InternshipDTO.FromEntity));
         }
 
 
         [HttpGet("for-student/{email}")]
-        public async Task<ActionResult<IEnumerable<InternshipDTO>>> GetInternshipsForStudent([FromRoute] string email)
+        public ActionResult<IEnumerable<InternshipDTO>> GetInternshipsForStudent([FromRoute] string email)
         {
-            var entities = await _context.Internships.Where(x => x.StudentEmail == email).ToListAsync();
+            var entities =  _context.Internships.Where(x => x.StudentEmail == email).ToList();
             return Ok(entities.Select(InternshipDTO.FromEntity));
         }
 
