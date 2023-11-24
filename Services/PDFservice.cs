@@ -36,9 +36,9 @@ public class PDFservice
 		string form = " ";
 
 		if (polish)
-			form = File.ReadAllText("Forms_templ\\Form_Pol_1.txt");
+			form = File.ReadAllText("Forms_templ/Form_Pol_1.txt");
         else
-			form = File.ReadAllText("Forms_templ\\Form_Eng_1.txt");
+			form = File.ReadAllText("Forms_templ/Form_Eng_1.txt");
 
 		form = Replace(form, student, internship);
 
@@ -123,9 +123,9 @@ public class PDFservice
 		string form = " ";
 
 		if (polish)
-			form = File.ReadAllText("Forms_templ\\Form_Pol_2.txt");
+			form = File.ReadAllText("Forms_templ/Form_Pol_2.txt");
 		else
-			form = File.ReadAllText("Forms_templ\\Form_Eng_2.txt");
+			form = File.ReadAllText("Forms_templ/Form_Eng_2.txt");
 
 		form = Replace(form, student, internship);
 
